@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
+const bookRoutes = require("./src/routes/bookRoutes");
 const userRoutes = require("./src/routes/userRoutes");
 
 dotenv.config();
@@ -12,6 +13,7 @@ mongoose.connect(process.env.MONGO_URI, {
   useUnifiedTopology: true,
 });
 
+app.use("/api", bookRoutes);
 app.use("/api", userRoutes);
 
 const PORT = process.env.PORT || 5000;
