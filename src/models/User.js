@@ -4,12 +4,12 @@ const bcrypt = require("bcrypt");
 const userSchema = new mongoose.Schema({
   username: { type: String, unique: true, required: true },
   password: { type: String, required: true },
-  reviews: [
-    {
-      bookId: { type: mongoose.Schema.Types.ObjectId, ref: "Book" },
-      review: String,
-    },
-  ],
+  // reviews: [
+  //   {
+  //     bookId: { type: mongoose.Schema.Types.ObjectId, ref: "Book" },
+  //     review: String,
+  //   },
+  // ],
 });
 
 // Hash the password before saving it to the database
